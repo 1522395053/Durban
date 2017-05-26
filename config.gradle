@@ -1,0 +1,58 @@
+ext {
+    plugins = [
+            application: 'com.android.application',
+            library    : 'com.android.library',
+            maven      : 'com.github.dcendents.android-maven',
+            bintray    : 'com.jfrog.bintray'
+    ]
+
+    android = [
+            applicationId       : "com.yanzhenjie.durban.sample",
+            compileSdkVersion   : 25,
+            buildToolsVersion   : "25.0.3",
+            libraryMinSdkVersion: 11,
+            sampleMinSdkVersion : 11,
+            targetSdkVersion    : 25,
+            versionCode         : 1,
+            versionName         : "1.0"
+    ]
+
+    maven = [
+            version       : "1.0.0",
+
+            siteUrl       : 'https://github.com/yanzhenjie/Durban',
+            gitUrl        : 'git@github.com:yanzhenjie/Durban.git',
+
+            group         : "com.yanzhenjie",
+
+            // project
+            packaging     : 'aar',
+            name          : 'Durban',
+            description   : 'Durban Crop for Android',
+
+            // project.license
+            licenseName   : 'The Apache Software License, Version 2.0',
+            licenseUrl    : 'http://www.apache.org/licenses/LICENSE-2.0.txt',
+
+            // project.developers
+            developerId   : 'yanzhenjie',
+            developerName : 'yanzhenjie',
+            developerEmail: 'smallajax@foxmail.com',
+
+            // bintray
+            binrayLibrary : "Durban",
+            bintrayRepo   : "maven",
+            bintrayUser   : 'yolanda',
+            bintrayLicense: "Apache-2.0"
+    ]
+
+
+    dependencies = [
+            appcompat: 'com.android.support:appcompat-v7:25.3.1',
+            design   : 'com.android.support:design:25.3.1',
+            loading  : 'com.yanzhenjie:loading:1.0.0',
+
+            album    : 'com.yanzhenjie:album:1.0.6',
+            durban   : 'com.yanzhenjie:durban:1.0.0',
+    ]
+}

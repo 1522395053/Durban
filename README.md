@@ -7,12 +7,12 @@ Recommended image selection library: [https://github.com/yanzhenjie/Album](https
 [中文文档](./README-CN.md)  
 
 # Screenshot
-<image src="./image/1.gif" width="280px"/>  
+<image src="./image/1.gif" width="280px"/>  <image src="./image/2.gif" width="280px"/>  
 
 # Dependencies
 * Gradle：
 ```groovy
-compile 'com.yanzhenjie:durban:1.0.0'
+compile 'com.yanzhenjie:durban:1.0.1'
 ```
 
 * Maven:
@@ -20,7 +20,7 @@ compile 'com.yanzhenjie:durban:1.0.0'
 <dependency>
   <groupId>com.yanzhenjie</groupId>
   <artifactId>durban</artifactId>
-  <version>1.0.0</version>
+  <version>1.0.1</version>
   <type>pom</type>
 </dependency>
 ```
@@ -55,6 +55,14 @@ Durban.with(this)
     .compressQuality(90)
     // Gesture: ROTATE, SCALE, ALL, NONE.
     .gesture(Durban.GESTURE_ALL)
+    .controller(
+    	Controller.newBuilder() // Create Builder of Controller.
+        .enable(false) // Enable the control panel.
+        .rotation(true) // Rotation button.
+        .rotationTitle(true) // Rotation button title.
+        .scale(true) // Scale button.
+        .scaleTitle(true) // Scale button title.
+        .build()) // Create Controller Config.
     .requestCode(200)
     .start();
 ```
@@ -97,6 +105,16 @@ protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         }
     }
 }
+```
+
+## Unexpected language configuration
+Durban supports English, Chinese Simplified and Traditional Chinese, and if you need to configure other languages, you can rewrite the resources in Durban's `String.xml` in `value-xxx`(xxx means other languages, such as: values-zh, values-zh-rHK), and use the following configuration language in `Application#onCreate()`: 
+```java
+Durban.initialize(
+    DurbanConfig.newBuilder(this)
+    .setLocale(...)
+    .build()
+);
 ```
 
 # Proguard-rules

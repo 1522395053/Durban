@@ -13,12 +13,12 @@ ext {
             libraryMinSdkVersion: 11,
             sampleMinSdkVersion : 11,
             targetSdkVersion    : 25,
-            versionCode         : 1,
-            versionName         : "1.0"
+            versionCode         : 2,
+            versionName         : "1.0.1"
     ]
 
     maven = [
-            version       : "1.0.0",
+            version       : "1.0.1",
 
             siteUrl       : 'https://github.com/yanzhenjie/Durban',
             gitUrl        : 'git@github.com:yanzhenjie/Durban.git',
@@ -49,10 +49,10 @@ ext {
 
     dependencies = [
             appcompat: 'com.android.support:appcompat-v7:25.3.1',
-            design   : 'com.android.support:design:25.3.1',
             loading  : 'com.yanzhenjie:loading:1.0.0',
 
+            design   : 'com.android.support:design:25.3.1',
             album    : 'com.yanzhenjie:album:1.0.6',
-            durban   : 'com.yanzhenjie:durban:1.0.0',
+            durban   : 'com.yanzhenjie:durban:1.0.1',
     ]
 }

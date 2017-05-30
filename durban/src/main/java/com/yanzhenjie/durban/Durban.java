@@ -23,7 +23,6 @@ import android.support.annotation.ColorInt;
 import android.support.annotation.IntDef;
 import android.support.annotation.IntRange;
 import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 
 import java.io.OutputStream;
@@ -32,6 +31,7 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Locale;
 
 /**
  * <p>Entrance.</p>
@@ -55,6 +55,8 @@ public class Durban {
 
     static final String KEY_INPUT_DIRECTORY = KEY_PREFIX + ".KEY_INPUT_DIRECTORY";
     static final String KEY_INPUT_PATH_ARRAY = KEY_PREFIX + ".KEY_INPUT_PATH_ARRAY";
+
+    static final String KEY_INPUT_CONTROLLER = KEY_PREFIX + ".KEY_INPUT_CONTROLLER";
 
     static final String KEY_OUTPUT_IMAGE_LIST = KEY_PREFIX + ".KEY_OUTPUT_IMAGE_LIST";
 
@@ -93,6 +95,33 @@ public class Durban {
     @Retention(RetentionPolicy.SOURCE)
     public @interface FormatTypes {
     }
+
+    private static DurbanConfig sDurbanConfig;
+
+    /**
+     * Initialize Album.
+     *
+     * @param durbanConfig {@link DurbanConfig}.
+     */
+    public static void initialize(DurbanConfig durbanConfig) {
+        sDurbanConfig = durbanConfig;
+    }
+
+    /**
+     * Get the durban configuration.
+     *
+     * @return {@link DurbanConfig}.
+     */
+    public static DurbanConfig getDurbanConfig() {
+        if (sDurbanConfig == null) {
+            initialize(DurbanConfig.newBuilder(null)
+                    .setLocale(Locale.getDefault())
+                    .build()
+            );
+        }
+        return sDurbanConfig;
+    }
+
 
     private Object o;
     private Intent mCropIntent;
@@ -235,6 +264,14 @@ public class Durban {
      */
     public Durban inputImagePaths(ArrayList<String> imagePathList) {
         mCropIntent.putStringArrayListExtra(KEY_INPUT_PATH_ARRAY, imagePathList);
+        return this;
+    }
+
+    /**
+     * Control panel configuration.
+     */
+    public Durban controller(Controller controller) {
+        mCropIntent.putExtra(KEY_INPUT_CONTROLLER, controller);
         return this;
     }
 

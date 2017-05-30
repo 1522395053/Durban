@@ -31,6 +31,7 @@ import android.view.MenuItem;
 import com.yanzhenjie.album.Album;
 import com.yanzhenjie.album.util.DisplayUtils;
 import com.yanzhenjie.album.widget.recyclerview.AlbumVerticalGirdDecoration;
+import com.yanzhenjie.durban.Controller;
 import com.yanzhenjie.durban.Durban;
 
 import java.util.ArrayList;
@@ -105,6 +106,13 @@ public class MainActivity extends AppCompatActivity {
                 .compressQuality(90)
                 // Gesture: ROTATE, SCALE, ALL, NONE.
                 .gesture(Durban.GESTURE_ALL)
+                .controller(Controller.newBuilder()
+                        .enable(false)
+                        .rotation(true)
+                        .rotationTitle(true)
+                        .scale(true)
+                        .scaleTitle(true)
+                        .build())
                 .requestCode(200)
                 .start();
     }

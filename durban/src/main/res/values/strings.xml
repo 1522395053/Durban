@@ -16,7 +16,10 @@
 -->
 <resources>
 
-    <string name="durban_TitleCrop">ImageCrop</string>
+    <string name="durban_title_crop">ImageCrop</string>
     <string name="durban_menu_crop">OK</string>
+
+    <string name="durban_controller_title_rotation">Rotation</string>
+    <string name="durban_controller_title_scale">Scale</string>
 
 </resources>

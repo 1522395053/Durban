@@ -522,7 +522,7 @@ public class OverlayView extends View {
     protected void processStyledAttributes(@NonNull TypedArray a) {
         mCircleDimmedLayer = a.getBoolean(R.styleable.durban_CropView_durban_circle_dimmed_layer, false);
         mDimmedColor = a.getColor(R.styleable.durban_CropView_durban_dimmed_color,
-                ContextCompat.getColor(getContext(), R.color.durban_ColorDimmed));
+                ContextCompat.getColor(getContext(), R.color.durban_CropDimmed));
         mDimmedStrokePaint.setColor(mDimmedColor);
         mDimmedStrokePaint.setStyle(Paint.Style.STROKE);
         mDimmedStrokePaint.setStrokeWidth(1);
@@ -541,7 +541,7 @@ public class OverlayView extends View {
         int cropFrameStrokeSize = a.getDimensionPixelSize(R.styleable.durban_CropView_durban_frame_stroke_size,
                 getResources().getDimensionPixelSize(R.dimen.durban_dp_1));
         int cropFrameColor = a.getColor(R.styleable.durban_CropView_durban_frame_color,
-                ContextCompat.getColor(getContext(), R.color.durban_ColorCropFrame));
+                ContextCompat.getColor(getContext(), R.color.durban_CropFrameLine));
         mCropFramePaint.setStrokeWidth(cropFrameStrokeSize);
         mCropFramePaint.setColor(cropFrameColor);
         mCropFramePaint.setStyle(Paint.Style.STROKE);
@@ -558,7 +558,7 @@ public class OverlayView extends View {
         int cropGridStrokeSize = a.getDimensionPixelSize(R.styleable.durban_CropView_durban_grid_stroke_size,
                 getResources().getDimensionPixelSize(R.dimen.durban_dp_1));
         int cropGridColor = a.getColor(R.styleable.durban_CropView_durban_grid_color,
-                ContextCompat.getColor(getContext(), R.color.durban_ColorCropGrid));
+                ContextCompat.getColor(getContext(), R.color.durban_CropGridLine));
         mCropGridPaint.setStrokeWidth(cropGridStrokeSize);
         mCropGridPaint.setColor(cropGridColor);
 

@@ -16,14 +16,18 @@
 -->
 <resources>
 
-    <color name="durban_White">#FFFFFFFF</color>
     <color name="durban_ColorPrimary">#2196F3</color>
     <color name="durban_ColorPrimaryDark">#1E88E5</color>
     <color name="durban_ColorPrimaryBlack">#FF2B2B2B</color>
-    <color name="durban_ColorLogo">#FF2B2B2B</color>
-    <color name="durban_ColorCropBackground">#FF2B2B2B</color>
-    <color name="durban_ColorDimmed">#8C000000</color>
-    <color name="durban_ColorCropGrid">#80FFFFFF</color>
-    <color name="durban_ColorCropFrame">#FFFFFF</color>
+
+    <color name="durban_White">#FFFFFFFF</color>
+
+    <color name="durban_ControllerBackground">@color/durban_ColorPrimaryBlack</color>
+
+    <color name="durban_CropLogo">#99FFFFFF</color>
+    <color name="durban_CropBackground">@color/durban_ColorPrimaryBlack</color>
+    <color name="durban_CropDimmed">#8C000000</color>
+    <color name="durban_CropGridLine">#80FFFFFF</color>
+    <color name="durban_CropFrameLine">#FFFFFFFF</color>
 
 </resources>

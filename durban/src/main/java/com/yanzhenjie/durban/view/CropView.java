@@ -42,7 +42,7 @@ public class CropView extends FrameLayout {
     public CropView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
 
-        LayoutInflater.from(context).inflate(R.layout.durban_view, this, true);
+        LayoutInflater.from(context).inflate(R.layout.durban_crop_view, this, true);
         mGestureCropImageView = (GestureCropImageView) findViewById(R.id.image_view_crop);
         mViewOverlay = (OverlayView) findViewById(R.id.view_overlay);
 

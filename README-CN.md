@@ -8,12 +8,12 @@ QQ技术交流群：[547839514](https://jq.qq.com/?_wv=1027&k=49Xx0JX)
 **[English Document](./README.md)**  
 
 # 截图
-<image src="./image/1.gif" width="280px"/>  
+<image src="./image/1.gif" width="280px"/>  <image src="./image/2.gif" width="280px"/>  
 
 # 依赖
 * Gradle：
 ```groovy
-compile 'com.yanzhenjie:durban:1.0.0'
+compile 'com.yanzhenjie:durban:1.0.1'
 ```
 
 * Maven:
@@ -21,7 +21,7 @@ compile 'com.yanzhenjie:durban:1.0.0'
 <dependency>
   <groupId>com.yanzhenjie</groupId>
   <artifactId>durban</artifactId>
-  <version>1.0.0</version>
+  <version>1.0.1</version>
   <type>pom</type>
 </dependency>
 ```
@@ -56,6 +56,14 @@ Durban.with(this)
     .compressQuality(90)
     // 裁剪时的手势支持：ROTATE, SCALE, ALL, NONE.
     .gesture(Durban.GESTURE_ALL)
+    .controller(
+        Controller.newBuilder()
+        .enable(false) // 是否开启控制面板。
+        .rotation(true) // 是否有旋转按钮。
+        .rotationTitle(true) // 旋转控制按钮上面的标题。
+        .scale(true) // 是否有缩放按钮。
+        .scaleTitle(true) // 缩放控制按钮上面的标题。
+        .build()) // 创建控制面板配置。
     .requestCode(200)
     .start();
 ```
@@ -98,6 +106,16 @@ protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         }
     }
 }
+```
+
+## 意外的语言配置
+Durban支持英文、简体中文和繁体中文，如果需要支持其它语言，你可以在`values-xxx`（xxx的意思是语言标记，比如：values-zh、values-zh-rHK）复写Durban的`string.xml`的资源，并且在`Application#onCreate()`中配置语言：  
+```java
+Durban.initialize(
+    DurbanConfig.newBuilder(this)
+    .setLocale(...)
+    .build()
+);
 ```
 
 # 混淆规则
